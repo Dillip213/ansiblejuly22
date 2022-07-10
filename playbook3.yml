@@ -10,12 +10,12 @@
    - name: copy tomcat-user.xml
      copy:
       src: tomcat-user.xml
-      dest: /tmp
+      dest: /etc/tomcat9/
    - name: change port no of tomcat from 8080 to 9090
      replace: 
       regexp: 8080
       replace: 9090
-      path: /tmp
+      path: /etc/tomcat9/
    - name:  restart tomcat9
      service:
       name: tomcat9
@@ -27,6 +27,6 @@
      uri:
       url: http://172.31.34.104
       ststus_code: 200
-      
+
 
 
