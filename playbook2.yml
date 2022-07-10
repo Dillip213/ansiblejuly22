@@ -1,0 +1,24 @@
+---
+- name: apache2 configure
+  hosts: all
+  tasks: 
+   - name: configuration apache2
+     apt:
+      name:  apache2
+      state: present
+      update_cache: yes
+   - name: edit the index.html file 
+     copy:
+      content: "Chikun"
+      dest: /var/www/html/index.html
+   - name:  restart apache2
+     service:
+      name:  apache2
+      state: restarted
+   - name: check the url response of apache2 on server1
+     uri:
+      url: http://172.31.34.104
+   - name: check the url response of apache2 on server2
+     uri:
+      url: http://172.31.33.123
+      status_code: 200
