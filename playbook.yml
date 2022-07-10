@@ -4,10 +4,9 @@
   tasks: 
    - name: user create
      user:
-      name: chinkun
+      name: chikun
       password: rasmi
       commit: "my world"
       shell: /bin/bash
       uid: 21232
-      home: /home/ubuntu/chinkun
-      
+      home: /home/ubuntu/chikun
