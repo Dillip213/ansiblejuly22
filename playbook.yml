@@ -6,7 +6,7 @@
      user:
       name: chikun
       password: rasmi
-      commit: "my world"
+      comment: "my world"
       shell: /bin/bash
       uid: 21232
       home: /home/ubuntu/chikun
