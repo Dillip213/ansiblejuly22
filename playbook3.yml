@@ -9,13 +9,13 @@
       update_cache: yes
    - name: copy tomcat-user.xml
      copy:
-      src: tomcat-user.xml
+      src: tomcat-users.xml
       dest: /etc/tomcat9/
    - name: change port no of tomcat from 8080 to 9090
      replace: 
       regexp: 8080
       replace: 9090
-      path: /etc/tomcat9/
+      path: /etc/tomcat9/server.xml
    - name:  restart tomcat9
      service:
       name: tomcat9
