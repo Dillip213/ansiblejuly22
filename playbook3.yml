@@ -1,0 +1,32 @@
+---
+- name: tomcat9 configure
+  hosts: all
+  tasks:
+   - name: install tomcat9
+     apt:
+      name:  tomcat9
+      state: present
+      update_cache: yes
+   - name: copy tomcat-user.xml
+     copy:
+      src: tomcat-user.xml
+      dest: /tmp
+   - name: change port no of tomcat from 8080 to 9090
+     replace: 
+      regexp: 8080
+      replace: 9090
+      path: /tmp
+   - name:  restart tomcat9
+     service:
+      name: tomcat9
+      state: restarted
+   - name: check tomcatresponse on server1
+     uri:
+      url: http://172.31.33.123
+   - name:  check tomcatresponse on server 2
+     uri:
+      url: http://172.31.34.104
+      ststus_code: 200
+      
+
+
