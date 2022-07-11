@@ -5,8 +5,8 @@
    - name:  install s/w
      apt:
       name:  "{{item}}"
-      state: "{{item}}"
-      update_cache: "{{item}}"
+      state: present 
+      update_cache: yes
      with_items:
       - tree 
       - openjdk-8-jdk
