@@ -2,15 +2,15 @@
 - name: install tomcat9 
   hosts: all
   tasks:
-   - name: s/w install tomcat
+   - name: s/w install tomcat9
      apt: 
       name: tomcat9
       state: present
       update_cache: yes
-   - name: copy tomcat-user.xml
+   - name: copy tomcat-users.xml
      copy:
       src: tomcat-users.xml
-      dest: /etc/tomcat9/ 
+      dest: /etc/tomcat9
    - name: change portof tomcatfrom 8080 to 9090
      replace: 
       regexp: 8080
