@@ -4,7 +4,7 @@
   tasks: 
    - name:  insta/uninstall application
      apt:
-      name:  "{{a}}"
-      state: "{{b}}"
-      update_cache: "{{c}}"
-      
+      name:  git
+      state: present 
+      update_cache: yes
+
