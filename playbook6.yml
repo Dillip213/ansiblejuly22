@@ -1,0 +1,13 @@
+---
+- name: install s/w application
+  hosts: all
+  tasks:
+   - name:  install s/w
+     apt:
+      name:  "{{item}}"
+      state: "{{item}}"
+      update_cache: "{{item}}"
+     with_items:
+      - tree 
+      - openjdk-8-jdk
+      - maven 
