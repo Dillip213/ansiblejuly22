@@ -1,0 +1,10 @@
+---
+- name: install s/w apply aplication
+  hosts: all
+  tasks: 
+   - name:  insta/uninstall application
+     apt:
+      name:  "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+      
