@@ -1,0 +1,14 @@
+---
+version: '3.8'
+services:
+  mydb:
+   image: mysql
+   environment:
+    MYSQL_ROOT_PASSWORD: dillip
+  mywordpress:
+   image: wordpress
+   ports:
+     - 7777:80
+   links:
+     - mydb:mysql 
+     
