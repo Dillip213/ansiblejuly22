@@ -4,11 +4,11 @@ services:
   mydb:
    image: mysql
    environment:
-    MYSQL_ROOT_PASSWORD: dillip
+    MYSQL_ROOT_PASSWORD: dillipk
   mywordpress:
    image: wordpress
    ports:
      - 7777:80
    links:
      - mydb:mysql 
-     
+
