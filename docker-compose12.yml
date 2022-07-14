@@ -1,5 +1,5 @@
 ---
-version: '3.8'
+version: '3.3'
 services:
  myjenkins:
   image: jenkins/jenkins
@@ -10,7 +10,7 @@ services:
   ports: 
    - 6060:8080
   links:
-   - jenkins:jenkins
+   - myjenkins:jenkins
  prodserver:
   image: tomee
   ports:
